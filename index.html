@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div id="error"></div>
+
+          <!-- Agregar usuario -->
+          <!-- Agregar usuario -->
+          <div class="float-end mt-3">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+            Agregar
+        </button>
+          </div>
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5">Nuevo usuario</h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <label for="basic-url" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="name" />
+                  <label for="basic-url" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="lastname" />
+                  <label for="basic-url" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="email" />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="saveUsers()"
+                  >
+                    Guardar
+                  </button>
+                  <div id="alert"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actualizar usuario -->
+          <div
+            class="modal fade"
+            id="updateModal"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5">Usuario</h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="modalName" />
+                  <label for="lastname" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="modalLastname" />
+                  <label for="email" class="form-label">Email</label>
+                  <input type="text" class="form-control" id="modalEmail" />
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="updateUsers()"
+                  >
+                    Actualizar
+                  </button>
+                  <div id="update"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-10">
+            <table class="table table-striped table-hover"" id="users">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Avatar</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+          </div>
+
+      
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+  </body>
+</html>
